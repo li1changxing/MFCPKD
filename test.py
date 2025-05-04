@@ -97,7 +97,7 @@ def mAP1(photo_loader, sketch_loader, model_img,model_skt):
     ############################################################################
     # Step 2: similarity
     sim = torch.mm(test_features_skt, test_features_img.T)
-    k = {'map': test_features_img.shape[0], 'precision': 100}
+    k = {'map': test_features_skt.shape[0], 'precision': 100}
     ############################################################################
     # Step 3: evaluate
     aps = map_sake(test_features_img.numpy(), gallery_labels.numpy(),
