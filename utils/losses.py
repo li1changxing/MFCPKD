@@ -83,9 +83,6 @@ class MOCO(nn.Module):
         return logits, labels
 
 def sim_moco(query, key,moco:MOCO,tmp=0.05):
-    label = torch.argmax(key,dim=1)
-    return query,label
-def sim_moco1(query, key,moco:MOCO,tmp=0.05):
     query = query
     key = key
     query = F.softmax(query, dim=1)
